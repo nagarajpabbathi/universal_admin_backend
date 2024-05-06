@@ -13,6 +13,9 @@ class Shop extends Model
         'name',
         'description',
         'image',
+        'facebook',
+        'twitter',
+        'instagram'
     ];
 
     public function media()

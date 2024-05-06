@@ -78,7 +78,7 @@ class CategoryTypeController extends Controller
         try {
             $categoryType = CategoryType::findOrFail($id);
             $categoryType->delete();
-            return ApiResponse::success("Category type deleted successfully", null, 204);
+            return ApiResponse::success("Category type deleted successfully", null, 200);
         } catch (\Exception $e) {
             return ApiResponse::error("Failed to delete category type: " . $e->getMessage());
         }
