@@ -22,4 +22,9 @@ class ShopService extends Model
     {
         return $this->belongsTo(Shop::class);
     }
+    
+    public function feedbacks()
+    {
+        return $this->morphMany(Feedback::class, 'related_entity');
+    }
 }

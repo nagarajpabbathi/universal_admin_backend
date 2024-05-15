@@ -36,4 +36,9 @@ class Shop extends Model
     {
         return $this->belongsToMany(Category::class);
     }
+    
+    public function feedbacks()
+    {
+        return $this->morphMany(Feedback::class, 'related_entity');
+    }
 }

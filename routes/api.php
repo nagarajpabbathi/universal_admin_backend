@@ -2,6 +2,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CategoryTypeController;
+use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\ShopMediaController;
 use App\Http\Controllers\ShopServiceController;
@@ -40,6 +41,8 @@ Route::middleware('auth:api')->group(function () {
     Route::resource('shop-service', ShopServiceController::class);
     Route::resource('shop-media', ShopMediaController::class);
     Route::resource('category-types', CategoryTypeController::class);
+
+    Route::resource('feedbacks', FeedbackController::class);
 });
 
 Route::post('/register', [AuthController::class, 'register']);
