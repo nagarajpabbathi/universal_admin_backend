@@ -21,6 +21,15 @@ class ShopController extends Controller
             return ApiResponse::error("Failed to retrieve shops: " . $e->getMessage());
         }
     }
+    public function fetchShopOptions()
+    {
+        try {
+            $shops = Shop::select('id', 'name')->get();
+            return ApiResponse::success("Shops retrieved successfully", $shops);
+        } catch (\Exception $e) {
+            return ApiResponse::error("Failed to retrieve shops: " . $e->getMessage());
+        }
+    }
 
     public function store(Request $request)
     {

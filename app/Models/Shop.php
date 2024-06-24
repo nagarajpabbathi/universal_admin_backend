@@ -41,4 +41,13 @@ class Shop extends Model
     {
         return $this->morphMany(Feedback::class, 'related_entity');
     }
+    public function promotions()
+    {
+        return $this->morphMany(Promotion::class, 'related_entity');
+    }
+    
+    public function news()
+    {
+        return $this->hasMany(News::class);
+    }
 }
